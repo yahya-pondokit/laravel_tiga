@@ -14,7 +14,7 @@ $no = 0;
 	Nama : {{$row->full_name}} 
 	Email : {{$row->email}} 
 	Jenis Kelamin : {{$row->gender}}
-	Tanggal Lahir : {{date('d-F-Y', strtotime($row->tgl_lahir))}}
+	Tanggal Lahir : {{date('d F Y', strtotime($row->tgl_lahir))}}
 	Agama Id : {{$row->agama_id}} 
 	<a href="{{ route('mahasiswa.edit', $row->id) }}">Edit</a>
 	<a href="{{ route('mahasiswa.show', $row->id)}} ">Detail</a> 
