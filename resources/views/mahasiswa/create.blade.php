@@ -7,7 +7,7 @@
 
 	Email : <input type="email" name="email" value="{{ old('email') }}">{{$errors->first('email')}}<br>
 
-	Password : <input type="password" name="password"">{{$errors->first('password')}}<br>
+	Password : <input type="password" name="password">{{$errors->first('password')}}<br>
 
 	Jenis Kelamin : <input type="radio" name="jenis_kelamin" value="L"> Laki - laki | <input type="radio" name="jenis_kelamin" value="P"> Perempuan <br>
 

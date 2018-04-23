@@ -39,7 +39,7 @@ class MahasiswaController extends Controller
         $request->validate([
             'first_name' => 'min:20|required',
             'last_name' => 'min:20',
-            'email' => 'email|unique:kampus|required',
+            'email' => 'email|unique:kampus,email|required',
             'password' => 'required',
             'jenis_kelamin' => 'required',
             'password' => 'min:8|required',
@@ -86,18 +86,19 @@ class MahasiswaController extends Controller
 
     public function update(Request $request, $id)
     {
-        Mahasiswa::find($id)->update($request->all());
-
         $request->validate([
             'first_name' => 'min:20|required',
             'last_name' => 'min:20',
-            'email' => 'email|required',
+            'email' => 'required|email|unique:kampus,email,'.$id,
             'password' => 'required',
             'jenis_kelamin' => 'required',
             'password' => 'min:8|required',
             'tgl_lahir' => 'date_format:"Y-m-d"|required',
             'agama_id' => 'integer|required'
         ]);
+
+        Mahasiswa::find($id)->update($request->all());
+
         return redirect('mahasiswa')->with('mahasiswa', 'Data has been successfully updated');
     }
 

@@ -23,4 +23,13 @@ class Mahasiswa extends Model
     {
         return "{$this->first_name} {$this->last_name}";
     }
+
+    public function getGenderAttribute()
+    {
+    	if ($this->jenis_kelamin == 'L'){
+            return 'Laki-laki';
+        } else {
+            return 'Perempuan';
+        }
+    }
 }
