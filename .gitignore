@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/AdminLTE-2.4.3
 /storage/*.key
 /vendor
 /.idea

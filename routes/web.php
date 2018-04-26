@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('mahasiswa', 'MahasiswaController');
+Route::view('admin', 'layout.app');
